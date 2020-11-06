@@ -1,0 +1,56 @@
+header.header {
+	position: fixed;
+	z-index: 99999;
+	top: 0;
+	width: 100%;
+	background-color: $white;
+	
+	
+	#hidden-nav {
+		display: none;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		padding-top: 2em;
+		padding-bottom: 2em;
+		padding: 2em;
+		max-width: 817px;
+		
+		ul.main-nav {
+			justify-content: center;
+			
+			> li,
+			ul.last-3-wrap {
+				max-width: 302px;
+			}
+			
+		}
+				
+	}
+	
+	#search-form-wrap {
+		padding-top: 1.5em;
+		padding-bottom: 1.5em;
+		display: none;
+		background-color: $black;
+		
+		form {
+			display: flex;
+			align-items: center;
+			
+			input {
+				margin: 0;
+			}
+		
+			button#close-search {
+				margin-left: 1em;
+			}
+		
+		}
+		
+	}
+	
+	
+}
+
