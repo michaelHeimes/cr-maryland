@@ -6,23 +6,21 @@
  */
 ?>
 
-<?php $theme = get_field('page_theme');?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('cell small-12 medium-6'); ?> role="article">
+	<div class="inner">
 
-<article id="post-<?php the_ID(); ?>" <?php post_class($theme); ?> role="article">					
+		<div class="img-wrap">
+			<?php $image = get_field('image_for_archives');
+			$image_size = 'blog-thumb';
+			$image_url = $image['sizes'][$image_size];
+			if($image): //dont output an empty image tag ?>
+				<img src="<?php echo $image_url; ?>" width="<?php echo $image['sizes']['blog-thumb-width']; ?>" height="<?php echo $image['sizes']['blog-thumb-height']; ?>" alt="<?php echo $image['caption']; ?>" />
+			<?php endif; ?>
+		</div>
 	
-	<header class="article-header">
-		<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-		<?php get_template_part( 'parts/content', 'byline' ); ?>
-		<?php the_excerpt();?>
-	</header> <!-- end article header -->
-					
-	<section class="entry-content" itemprop="text">
-		<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('full'); ?></a>
-		<?php the_content('<button class="tiny">' . __( 'Read more...', 'jointswp' ) . '</button>'); ?>
-	</section> <!-- end article section -->
-						
-	<footer class="article-footer">
-    	<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'jointswp') . '</span> ', ', ', ''); ?></p>
-	</footer> <!-- end article footer -->	
-				    						
-</article> <!-- end article -->
+		<h3><?php the_title(); ?></h3>
+        <a href="<?php the_permalink() ?>" rel="bookmark">Read More</a>
+    
+	</div>			            
+</article>
+

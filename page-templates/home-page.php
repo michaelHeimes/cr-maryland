@@ -2,7 +2,7 @@
 /**
  * Template Name: Home Page
  *
- * This is the template that displays all pages by default.
+ * 
  */
 
 get_header(); ?>

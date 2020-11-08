@@ -6,21 +6,38 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 						
-	<header class="article-header">	
-		<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-		<?php get_template_part( 'parts/content', 'byline' ); ?>
+	<header class="article-header grid-container">	
+		<div class="post-theme-label"><span class="highlighter"><?php the_field('page_theme');?></span></div>
+		<div class="date-wrap cell-12"><?php $post_date = get_the_date( 'F j, Y' ); echo $post_date; ?></div>
+		<h1 class="entry-title single-title cell small-12" itemprop="headline"><?php the_title(); ?></h1>
     </header> <!-- end article header -->
 					
     <section class="entry-content" itemprop="text">
-		<?php the_post_thumbnail('full'); ?>
-		<?php the_content(); ?>
+	    <?php the_content(); ?>
+	    
+	    <?php get_template_part( 'parts/loop', 'modules' ); ?>
 	</section> <!-- end article section -->
 						
-	<footer class="article-footer">
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jointswp' ), 'after'  => '</div>' ) ); ?>
-		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'jointswp' ) . '</span> ', ', ', ''); ?></p>	
+	<footer class="article-footer grid-container">
+		
+		<h3 class="cell small-12 text-center">Share This Article</h3>
+		
+		
+	<div class="a2a_kit a2a_default_style grid-x grid-padding-x align-center">
+	    <a class="a2a_button_facebook">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/FB-logo.svg" alt="facebook-logo" />
+	    </a>
+	    <a class="a2a_button_linkedin">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/linkedin-logo.svg" alt="linkedin-logo" />
+	    </a>
+	    <a class="a2a_button_twitter">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter-logo.svg" alt="twitter-logo" />
+	    </a>
+	</div>
+
+	<script async src="https://static.addtoany.com/menu/page.js"></script>
+		
+		
 	</footer> <!-- end article footer -->
-						
-	<?php comments_template(); ?>	
-													
+																			
 </article> <!-- end article -->

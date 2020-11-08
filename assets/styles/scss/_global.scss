@@ -19,6 +19,7 @@ span.large-copy {
 	font-size: rem-calc(18);
 }
 
+div,
 h1,
 h2,
 h3,
@@ -396,8 +397,10 @@ article.community {
 	}
 }
 
-.bg-invest {
-	background-color: $theme-yellow;
+
+.bg-invest,
+.bg-sell,
+.bg-community {
 	color: $black;	
 	
 	a {
@@ -406,56 +409,71 @@ article.community {
 	
 }
 
-.bg-sell {
-	background-color: $white;
-	color: $black;	
-	
-	a {
-		color: $black;	
-	}
-	
-}
-
-.bg-rent {
-	background-color: $theme-red;
+.bg-rent,
+.bg-buy {
 	color: $white;
 	
 	a {
-		color: $white;
-	}
+		color: $white !important;
 		
+	&:after {
+		content: url('/wp-content/themes/cr-maryland/assets/images/nav-arrow-white.svg') !important;
+	}
+	
+	}
+	
+}
+
+.bg-invest {
+	background-color: $theme-yellow;
+}
+
+.bg-sell {
+	background-color: $white;	
+}
+
+.bg-rent {
+	background-color: $theme-red;		
 }
 
 .bg-buy {
 	background-color: $black;
-	color: $white;	
-	
-	a {
-		color: $white;	
-	}
-	
 }
 
 .bg-community {
-	background-color: $theme-gray;
-	color: $black;
-	
-	a {
-		color: $black;
-	}
-		
+	background-color: $theme-gray;	
 }
 
 /*********************
 GLOBAL ELEMENTS
 *********************/
 
-// Round Arrow Buttons
-.r-arrow {
+// Round Arrow Links
+span.circle-arrow-link {
+	display: flex;
 	position: relative;
+	align-items: center;
+	
+	a {
+		position: relative;
+		color: $black;
+		text-transform: uppercase;
+		
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		border-bottom: 3px solid $black;
+	}
+		
+	}
+	
+
 	
 &:after {
-	
+	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-black.svg);
 }
 		
 }
@@ -510,7 +528,7 @@ a.button.bg-sell,
 a.button.bg-community {
 	
 &:after {
-	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-black.svg);;
+	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-black.svg);
 }
 
 }
@@ -520,7 +538,7 @@ li.sell > a,
 li.community > a {
 	
 &:after {
-	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-black-thick.svg);;
+	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-black-thick.svg);
 }
 	
 }
@@ -532,7 +550,7 @@ a.button.bg-rent,
 a.button.bg-buy, {
 	
 &:after {
-	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-white.svg);;
+	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-white.svg);
 }
 
 }
@@ -541,7 +559,7 @@ li.rent > a,
 li.buy > a {
 	
 &:after {
-	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-white-thick.svg);;
+	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-white-thick.svg);
 }
 	
 }

@@ -40,26 +40,10 @@
 		if( $featured_posts ): ?>
 		<div class="grid-x grid-padding-x">
 		    <?php foreach( $featured_posts as $post ): 
-		
-		        // Setup this post for WP functions (variable must be named $post).
 		        setup_postdata($post); ?>
-				<div class="cell small-12 medium-6">
-					<div class="inner">
 
-						<div class="img-wrap">
-							<?php $image = get_field('image_for_archives');
-							$image_size = 'blog-thumb';
-							$image_url = $image['sizes'][$image_size];
-							if($image): //dont output an empty image tag ?>
-								<img src="<?php echo $image_url; ?>" width="<?php echo $image['sizes']['blog-thumb-width']; ?>" height="<?php echo $image['sizes']['blog-thumb-height']; ?>" alt="<?php echo $image['caption']; ?>" />
-							<?php endif; ?>
-						</div>
-					
-						<h3><?php the_title(); ?></h3>
-				        <a href="<?php the_permalink(); ?>">Read More</a>
-			        
-					</div>			            
-		        </div>
+				<?php get_template_part( 'parts/loop', 'archive' ); ?>
+
 		    <?php endforeach; ?>
 		</div>
 		    <?php 

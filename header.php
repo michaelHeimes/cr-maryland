@@ -43,7 +43,7 @@
 			
 			<div class="off-canvas-content" data-off-canvas-content>
 				
-				<header class="header" role="banner">
+				<header class="header" role="banner" data-sticky data-margin-top="0" data-sticky-on="small">
 
 					<div class="header-top">
 						<div class="grid-container fluid">

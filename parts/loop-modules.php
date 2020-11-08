@@ -2,9 +2,33 @@
 <?php while ( have_rows('modules') ) : ?> 
 	<?php the_row(); ?>
 
+	<?php if ( get_row_layout() == 'centered_button_link' ) : 
+	
+		get_template_part('modules/centered_button_link');
+	
+	endif;?>
+
 	<?php if ( get_row_layout() == 'contact_form' ) : 
 	
 		get_template_part('modules/contact_form');
+	
+	endif;?>
+	
+	<?php if ( get_row_layout() == 'faqs' ) : 
+	
+		get_template_part('modules/faqs');
+	
+	endif;?>
+
+	<?php if ( get_row_layout() == 'four_columns_of_numbers_and_labels' ) : 
+	
+		get_template_part('modules/four_columns_of_numbers_and_labels');
+	
+	endif;?>
+
+	<?php if ( get_row_layout() == 'full_width_image' ) : 
+	
+		get_template_part('modules/full_width_image');
 	
 	endif;?>
 
@@ -32,17 +56,6 @@
 	
 	endif;?>
 
-	<?php if ( get_row_layout() == 'faqs' ) : 
-	
-		get_template_part('modules/faqs');
-	
-	endif;?>
-
-	<?php if ( get_row_layout() == 'four_columns_of_numbers_and_labels' ) : 
-	
-		get_template_part('modules/four_columns_of_numbers_and_labels');
-	
-	endif;?>
 
 	<?php if ( get_row_layout() == 'resource_links' ) : 
 	

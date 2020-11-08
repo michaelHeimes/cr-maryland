@@ -12,6 +12,8 @@ function joints_theme_support() {
 	// Custom Image Sizes
 	add_image_size( 'header-copy-bg-img', 1083, 470, true ); 
 	add_image_size( 'blog-thumb', 499, 276, true ); 
+	add_image_size( 'full-width-img', 1400); 
+
 
 	// Add RSS Support
 	add_theme_support( 'automatic-feed-links' );

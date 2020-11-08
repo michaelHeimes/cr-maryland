@@ -41,8 +41,8 @@ if( function_exists('acf_set_options_page_title') ) {
 // Add Page Theme to Body classes
 function add_acf_body_class($class) {
 	
-	if ( !is_page_template() && !is_search() ) {
-    	$value = get_field('page_theme');
+	if ( !is_search() ) {
+    	$value = get_field('page_theme', $post->ID);
     }
     $class[] = $value;
     return $class;
@@ -85,6 +85,12 @@ function my_custom_styles( $init_array ) {
             'title' => 'Highlighter',  
             'block' => 'span',  
             'classes' => 'highlighter',
+            'wrapper' => true,
+        ),
+        array(  
+            'title' => 'Circle Arrow Link',  
+            'block' => 'span',  
+            'classes' => 'circle-arrow-link',
             'wrapper' => true,
         ),
     );  
