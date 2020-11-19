@@ -1,0 +1,38 @@
+.heading-tri-color-copy {
+	
+	h2 {
+    	margin-bottom: .8em;
+    	margin-bottom: 1.3em;
+	}
+
+	.tri-color-bar {
+		width: 100%;
+		max-width: 423px;
+		margin-left: auto;
+		margin-right: auto;
+		height: 11px;
+		display: flex;
+		margin-bottom: 1.85em;
+		
+	span {
+	    display: inline-block;
+	    width: 33.33333%;
+	    
+	    &:nth-child(1) {
+		    background-color: $black;
+	    }
+	    &:nth-child(2) {
+		    background-color: $theme-yellow;
+	    }
+	    &:nth-child(3) {
+		    background-color: $theme-red;
+	    }
+	}
+		
+	}
+	
+	.copy-wrap {
+		line-height: 1.9333;
+	}
+	
+}

@@ -4,12 +4,20 @@
  *
  * Used for single, index, archive, search.
  */
+ 
+$theme = get_field('page_theme');
+ 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('cell small-12 medium-6'); ?> role="article">
+<article id="post-<?php the_ID(); ?>" <?php post_class('in-archive cell small-12 medium-6'); ?> role="article">
 	<div class="inner">
 
 		<div class="img-wrap">
+		
+		<div class="theme-label caps weight-bold bg-<?php echo $theme;?>">
+			<?php echo $theme;?>
+		</div>
+		
 			<?php $image = get_field('image_for_archives');
 			$image_size = 'blog-thumb';
 			$image_url = $image['sizes'][$image_size];
@@ -18,8 +26,8 @@
 			<?php endif; ?>
 		</div>
 	
-		<h3><?php the_title(); ?></h3>
-        <a href="<?php the_permalink() ?>" rel="bookmark">Read More</a>
+		<h3 class="weight-bold"><?php the_title(); ?></h3>
+        <a class="lm-link caps weight-bold" href="<?php the_permalink() ?>" rel="bookmark">Read More</a>
     
 	</div>			            
 </article>

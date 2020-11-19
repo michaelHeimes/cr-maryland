@@ -1,0 +1,83 @@
+.page-template-about-page {
+	
+	.article-header {
+		
+		.right {
+			padding-top: 2.35em;
+			
+			a {
+				color: $white;
+			}
+			
+		}
+		
+		.nav-wrap {
+			ul { 
+			    background-color: $black;
+				border-color: $black;
+				
+				li {
+					margin: 0;
+					
+					a {
+						&:after {
+							content: url(/wp-content/themes/cr-maryland/assets/images/nav-arrow-white.svg);
+						}
+					}
+					
+				}
+				
+			}
+		}
+	}
+	
+	.ir-image-slider {
+		margin-top: 2.85em;
+	}
+	
+	
+	#our-team {
+		.team-accordion {
+			
+			.single-team-member {
+				
+				a {
+					cursor: pointer;
+					
+				&:hover {
+					color: $black;
+				}
+				
+					h3 {
+						font-size: rem-calc(29);
+						color: $theme-red;
+						padding-top: 0.03em;
+						margin-bottom: 0.34em;
+					}
+					
+					h4 {
+						font-size: rem-calc(18);
+						font-weight: 600;
+						margin-bottom: 1.1em;
+					}
+					
+					div {
+						font-size: rem-calc(15);
+						color: $black;
+						padding-bottom: .9em;
+						
+					&:last-child {
+						padding-bottom: 0;
+					}
+						
+					}
+				
+				}
+				
+			}
+				
+		}
+	}
+	
+
+}

@@ -1,0 +1,50 @@
+.testimonials {
+	
+	.testimonial-slider {
+		overflow: hidden;
+		height: 0;
+		
+	&.slick-initialized {
+		height: auto;
+	}
+	
+		.single-testimonial {
+			margin: 0 1em;
+	
+			.author {
+				font-size: rem-calc(22);
+				font-weight: 500;
+				font-style: italic;
+				padding-top: 1.35em;
+			}
+		
+		}
+		
+		ul.slick-dots {
+		    list-style: none;
+		    margin: 0;
+		    padding: 2em 0 0;
+		    display: flex;
+		    justify-content: center;
+		    
+		    li {
+			    font-size: 0;
+			    width: 13px;
+			    height: 13px;
+			    border: 2px solid $black;
+			    border-radius: 100%;
+			    background: $white;
+			    margin: 4px 8px;
+			    transition: background-color 0.25s ease;
+			    
+			&.slick-active {
+				background-color: $black;
+			}
+			    
+		    }
+		    
+		}
+	
+	}
+	
+}

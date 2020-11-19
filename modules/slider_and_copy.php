@@ -1,4 +1,4 @@
-<section class="slider-copy">
+<section class="slider-copy module" <?php if(get_sub_field('remove_bottom_margin')):?>style="margin-bottom: 0;"<?php endif;?>>
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			
@@ -6,7 +6,7 @@
 			$images = get_sub_field('images');
 			if( $images ):?>
 			
-			    <div class="gallery-slider cell small-12 medium-6">
+			    <div class="sc-slider cell small-12 medium-6">
 			        <?php foreach( $images as $image ): ?>
 			        
 			            <div class="single-slide">
@@ -19,7 +19,9 @@
 			<?php endif; ?>
 			
 			<div class="copy cell small-12 medium-6">
-				<?php the_sub_field('copy');?>
+				<div class="inner">
+					<?php the_sub_field('copy');?>
+				</div>
 			</div>
 								
 		</div>

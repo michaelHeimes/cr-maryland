@@ -1,0 +1,73 @@
+.step-cubes {
+	
+	.cubes-wrap {
+		padding-top: .6em;
+	
+		.single-cube {
+			margin-bottom: 1.75em;
+			
+			.inner {
+				padding: 2.15em;
+				display: flex;
+			    flex-direction: column;
+			    justify-content: flex-end;
+			    border-style: solid;
+			    border-width: 4px;
+				
+				.step {
+					padding-bottom: .6em;
+				}
+				
+				.cube-text {
+					font-size: rem-calc(20);
+					line-height: 1.1;
+					
+					@include breakpoint(tablet) {
+						font-size: rem-calc(28);
+					}
+					
+				}
+				
+			}
+			
+			.copy-wrap {
+				border-bottom: 1px solid $black;
+				padding-top: 1.85em;
+				padding-bottom: 0.45em;
+			}
+			
+		}
+	
+	}
+	
+}
+
+body.invest {
+	.step-cubes .cubes-wrap .single-cube .inner {
+		border-color: $theme-yellow;
+	}
+}
+
+body.sell {
+	.step-cubes .cubes-wrap .single-cube .inner {
+		border-color: $black;
+	}	
+}
+
+body.rent {
+	.step-cubes .cubes-wrap .single-cube .inner {
+		border-color: $theme-red;
+	}	
+}
+
+body.buy {
+	.step-cubes .cubes-wrap .single-cube .inner {
+		border-color: $black;
+	}	
+}
+
+body.community {
+	.step-cubes .cubes-wrap .single-cube .inner {
+		border-color: $theme-gray;
+	}	
+}

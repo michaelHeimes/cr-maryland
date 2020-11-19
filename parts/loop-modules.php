@@ -56,6 +56,11 @@
 	
 	endif;?>
 
+	<?php if ( get_row_layout() == 'press_feed' ) : 
+	
+		get_template_part('modules/press_feed');
+	
+	endif;?>
 
 	<?php if ( get_row_layout() == 'resource_links' ) : 
 	

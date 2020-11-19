@@ -1,0 +1,17 @@
+.slider-copy {
+	
+	.sc-slider {
+		position: relative;		
+	}
+	
+	.copy {
+		.inner {
+			
+			@include breakpoint(medium) {
+				padding-left: 2.5em;
+			}
+			
+		}
+	}
+	
+}

@@ -1,0 +1,27 @@
+.icon-and-text-rows {
+	padding-top: .99em;
+	padding-bottom: 2.1em;
+		
+	.icon-text-row {
+		display: flex;
+		align-items: center;
+		border-top: 1px solid $black;
+		border-bottom: 1px solid $black;
+		padding-top: 1.75em;
+		padding-top: 1.45em;
+		padding-bottom: 1.45em;
+		margin-top: -1px;
+	
+		.icon-wrap {
+			width: 70px;
+			margin-right: 2em;
+		}
+		
+		.label-wrap {
+			flex: 1;
+			font-size: rem-calc(22);
+		}
+		
+	}
+		
+}

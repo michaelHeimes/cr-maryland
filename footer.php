@@ -118,10 +118,13 @@
 									
 								</div>
 							</div>
-						
+													
 						</div> <!-- end #inner-footer -->
 						
 					</div>
+					
+					<div class="bar"><span></span><span></span><span></span><span></span></div>		
+			
 				</footer> <!-- end .footer -->
 			
 			</div>  <!-- end .off-canvas-content -->

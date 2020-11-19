@@ -1,0 +1,24 @@
+.heading-copy-bg {
+	padding-top: 7.75em;
+	padding-bottom: 7.4em;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+	h2,
+	.copy-wrap {
+		color: $white;
+	}
+	
+	h2 {
+		margin-bottom: .4em;
+	}
+	
+	.copy-wrap  {
+		font-size: rem-calc(22);
+		font-weight: 500;
+		line-height: 1.59;
+		padding-bottom: 1.35em;	
+	}
+	
+}

@@ -2,13 +2,14 @@
 /**
  * Template part for displaying a single post
  */
+ $theme = get_field('page_theme');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 						
 	<header class="article-header grid-container">	
-		<div class="post-theme-label"><span class="highlighter"><?php the_field('page_theme');?></span></div>
-		<div class="date-wrap cell-12"><?php $post_date = get_the_date( 'F j, Y' ); echo $post_date; ?></div>
+		<div class="post-theme-label caps weight-bold"><span class="bg-<?php echo $theme;?> weight-bold"><?php the_field('page_theme');?></span></div>
+		<div class="date-wrap weight-bold caps"><?php $post_date = get_the_date( 'F j, Y' ); echo $post_date; ?></div>
 		<h1 class="entry-title single-title cell small-12" itemprop="headline"><?php the_title(); ?></h1>
     </header> <!-- end article header -->
 					
@@ -19,8 +20,9 @@
 	</section> <!-- end article section -->
 						
 	<footer class="article-footer grid-container">
+		<div class="divider"></div>
 		
-		<h3 class="cell small-12 text-center">Share This Article</h3>
+		<h3 class="cell small-12 text-center caps weight-bold">Share This Article</h3>
 		
 		
 	<div class="a2a_kit a2a_default_style grid-x grid-padding-x align-center">

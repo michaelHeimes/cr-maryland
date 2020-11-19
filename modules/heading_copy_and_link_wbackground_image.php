@@ -4,7 +4,7 @@
 	$hcbg_imgArr = wp_get_attachment_image_src( $hcbg_imgID, $hcbg_imgSize );
 ?>
 
-<section class="heading-copy-bg" style="background-image: url(<?php echo $hcbg_imgArr[0]; ?> );">
+<section class="heading-copy-bg module" style="background-image: url(<?php echo $hcbg_imgArr[0]; ?> ); <?php if(get_sub_field('remove_bottom_margin')):?>margin-bottom: 0;<?php endif;?>">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			
@@ -25,8 +25,7 @@
 				    $link_title = $link['title'];
 				    $link_target = $link['target'] ? $link['target'] : '_self';
 				    ?>
-				    <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?>
-				    	<img src="<?php echo get_template_directory_uri(); ?>/assets/images/btn-arrow.svg" alt="btn-arrow" />
+				    <a class="button r-arrow caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?>
 				    </a>
 				<?php endif; ?>
 				

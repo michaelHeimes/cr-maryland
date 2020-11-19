@@ -1,0 +1,48 @@
+.search-results {
+	
+	main {
+		padding-bottom: 8em;
+		
+		.press-label {
+			padding-top: 3.8em;
+		}
+		
+		article {
+			padding-top: 1.35em;
+			padding-bottom: 1.22em;
+			
+		&:not(:last-child) {
+			border-bottom: 1px solid #707070;
+		}
+		
+			h2 {
+				margin-bottom: 0;
+				
+				span {
+					line-height: 1.4;
+					display: inline-block;
+					text-decoration: underline;
+				}
+				
+			}
+		
+			a,
+			.date {
+				font-size: rem-calc(18);
+				font-weight: 600;				
+			}
+			
+			a {
+				color: $theme-red;
+				text-decoration: underline;
+			}
+			
+			.date {
+				margin-bottom: 1em;
+			}
+		
+		}
+		
+	}
+	
+}

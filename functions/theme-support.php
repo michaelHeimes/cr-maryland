@@ -10,10 +10,14 @@ function joints_theme_support() {
 	set_post_thumbnail_size(125, 125, true);
 	
 	// Custom Image Sizes
+	add_image_size( 'audience-banner-img', 826, 1378, true ); 
 	add_image_size( 'header-copy-bg-img', 1083, 470, true ); 
-	add_image_size( 'blog-thumb', 499, 276, true ); 
+	add_image_size( 'blog-thumb', 998, 552, true ); 
 	add_image_size( 'full-width-img', 1400); 
-
+	add_image_size( 'gs-portrait', 576, 862, true); 
+	add_image_size( 'gs-landscape', 1000, 664, true); 
+	add_image_size( 'about-slider', 1067, 772, true); 
+	add_image_size( 'team-photo', 110, 147, true); 
 
 	// Add RSS Support
 	add_theme_support( 'automatic-feed-links' );

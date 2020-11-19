@@ -1,4 +1,4 @@
-<section class="resource-links bg-rent">
+<section class="resource-links bg-rent module" <?php if(get_sub_field('remove_bottom_margin')):?>style="margin-bottom: 0;"<?php endif;?>>
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			<div class="left cell small-12 medium-6">
@@ -36,7 +36,7 @@
 										<?php endif; ?>
 									</div>
 									
-									<div class="label-wrap">			
+									<div class="label-wrap weight-black">			
 										<?php echo esc_html( $link_title ); ?>
 									</div>
 								

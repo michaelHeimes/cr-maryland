@@ -1,15 +1,5 @@
 <?php
 
-/**
- * Enqueue Google fonts.
- */
-/*
-function wpb_add_google_fonts() {
-
-wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Barlow|Montserrat', false ); 
-}
-*/
-
 // Disable Gutenberg
 
 if (version_compare($GLOBALS['wp_version'], '5.0-beta', '>')) {
@@ -90,7 +80,7 @@ function my_custom_styles( $init_array ) {
         array(  
             'title' => 'Circle Arrow Link',  
             'block' => 'span',  
-            'classes' => 'circle-arrow-link',
+            'classes' => 'circle-arrow-link r-arrow',
             'wrapper' => true,
         ),
     );  

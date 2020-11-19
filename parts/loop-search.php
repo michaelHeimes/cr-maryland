@@ -10,9 +10,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($theme); ?> role="article">					
 	
-	<header class="article-header">
-		<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-		<?php get_template_part( 'parts/content', 'byline' ); ?>
+	<header class="search-article-header">
+		<h2>
+			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+				<span><?php the_title(); ?></span>
+			</a>
+		</h2>
+<!-- 		<?php get_template_part( 'parts/content', 'byline' ); ?> -->
+			<div class="date">
+				<?php $post_date = get_the_date( 'F j, Y' ); echo $post_date; ?>
+			</div>
+
 		<?php the_excerpt();?>
 	</header> <!-- end article header -->
 					

@@ -1,15 +1,167 @@
-.blog,
+article.type-post.in-archive {
+	position: relative;
+	margin-bottom: 3.5em;
+	
+	@include breakpoint (medium) {
+		max-width: 531px;
+	}
+	
+	.img-wrap {
+		margin-bottom: 1.25em;
+	
+		.theme-label {
+			position: absolute;
+			display: inline-block;
+			font-size: rem-calc(12);
+			padding: .5em 1em .6em 1.06em;
+			min-width: 112px;
+		}
+	
+	}
+	
+	h3 {
+		font-size: rem-calc(22);
+		line-height: 1.31;
+		margin-bottom: .8em;
+	}
+	
+	a.lm-link {
+		color: $theme-red;
+	}
+	
+}
+	
+.page-template-blog,
 .page-template-audience-blog {
 	
 	header.article-header {
+		
+		@include breakpoint(medium) {
+			margin-bottom: 8em;
+		}
+		
+		.right {
+			padding-top: 2.7em;
+			
+			.date-wrap {
+				font-size: rem-calc(12);
+				letter-spacing: 0.1px;
+				padding-bottom: .4em;
+			}
+								
+			h1 {
+				font-size: rem-calc(39);
+				line-height: 1.1794;
+				margin-bottom: .65em;
+			}
+			
+		}
 
-		.nav-wrap {
+		.nav-wrap.blog-nav {
 			> ul {
 				border: 0;
 				background-color: transparent !important;
+				
+				li {
+					padding-left: 0;
+					padding-right: 0;
+					margin: 0;
+					
+					a {
+						display: inline-block;
+						width: 100%;
+						text-align: center;
+					}
+				}
+				
 			}
 		}
 	
+	}
+		
+	.alm-btn-wrap {
+		padding-top: 1.35em !important;
+		padding-bottom: 3.3em !important;
+					
+		@include breakpoint(medium) {
+			padding-top: 3.35em !important;
+			padding-bottom: 9.3em !important;
+		}
+
+		.alm-load-more-btn {
+			background-color: $black !important;
+		}
+	
+	}
+	
+}
+
+.page-template-blog {
+	section {
+		> .top {
+			padding-bottom: 2em;
+			
+			@include breakpoint(medium) {
+				padding-bottom: 0;
+			}
+			
+		}
+	}
+}
+
+.page-template-blog {
+	main {
+		padding-bottom: 9.8em;
+	}
+}
+
+.single-post {
+	
+	header.article-header {
+		padding-bottom: 0;
+		
+		.date-wrap {
+			font-size: rem-calc(12);
+			letter-spacing: 0.1px;
+			padding-bottom: .4em;
+		}
+		
+	}
+
+	footer.article-footer {
+		margin-top: 2.35em;
+		padding-bottom: 6em;
+		
+		@include breakpoint(medium) {
+			padding-bottom: 10.3em;
+		}
+		
+		.divider {
+			border-bottom: 1px solid $black;
+			margin-bottom: 2.7em;
+		}
+		
+		h3 {
+			font-size: rem-calc(22);
+			margin-bottom: .9em;
+		}
+		
+		.a2a_kit {
+			a {
+				margin: 0 .6em;
+			}
+		}
+		
+	}
+	
+}
+
+.post-theme-label {
+	margin-bottom: 1.25em;
+	
+	span {
+		display: inline-block;
+		padding: .22em .83em;
 	}
 	
 }

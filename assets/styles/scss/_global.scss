@@ -6,8 +6,30 @@ Stylesheet: Global Stylesheet
 /*********************
 TYPOGRAPHY
 *********************/
-p {
+
+h2 {
+	&.small-caps {
+		text-transform: uppercase;
+		font-size: rem-calc(26);
+		font-weight: 900;
+		letter-spacing: .15em;
+	}
+}
+
+h3,
+.h3 {
+	font-weight: bold;
+}
+
+.caps {
+	text-transform: uppercase;
+}
+
+.copy-wrap,
+p,
+a {
 	font-size: rem-calc(15);
+	line-height: 1.9333;
 	
 	span.large-copy {
 		font-size: rem-calc(18);
@@ -17,6 +39,7 @@ p {
 
 span.large-copy {
 	font-size: rem-calc(18);
+	font-weight: 500;
 }
 
 div,
@@ -28,8 +51,36 @@ h5,
 h6,
 p {
 	span.highlighter {
+		display: inline-block;
 		background-color: $theme-yellow;
 	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	span.highlighter {
+		padding: .364em .7544em;
+	}
+
+}
+
+p {
+	span.highlighter {
+		padding: .2em .8em;
+		line-height: 1;
+	}
+}
+
+.weight-black {
+	font-weight: 900;
+}
+
+.weight-bold {
+	font-weight: bold;
 }
 
 /*********************
@@ -119,334 +170,179 @@ FULL NAV
 		}
 	}
 	
-}
-
-
-/*********************
-AUDIENCE THEME COLORS
-*********************/
-.article-header {
-	.nav-wrap {
-		border: 19px solid $white;
+	ul.last-3-wrap {
+		display: flex;
+		align-items: center;
 		
-		ul {
-			border-width: 3px;
-			border-style: solid;
+		li {
+			position: relative;
 			
-			li {
-				a {
-					position: relative;
-					
-				&:after {
-					display: inline-block;
-					width: .299375em;
-					height: .598em;
-				}
-					
-				}
+			a {
+				display: inline-block;
+				font-weight: bold;
 			}
 			
+		&:not(:last-child) {
+			
+		&:after {
+			position: absolute;
+			right: -1px;
+			top: 0;
+			content: '';
+			height: 26px;
+			border-right: 2px solid $white;
 		}
-		
-	}
-}
-
-
-
-body.invest {
-	
-	header.article-header ul {
-		background-color: $theme-yellow;
-		border-color: $theme-yellow;
-		
-		li {
-			a {
-				color: $black;
-				
-			&:after {
-				content: url(/wp-content/themes/cr-maryland/assets/images/nav-arrow-black.svg);
-			}
-				
-			}
+			
 		}
-		
-	}
-	
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p {
-		span.highlighter {
-			background-color: $theme-yellow;
+			
 		}
 	}
-
-	button, 
-	.button {
-		background-color: $theme-yellow;
-		color: $black;
-	}
 	
 }
 
-body.sell {
-	
-	header.article-header ul {
-		background-color: $white;
-		border-color: $black;
-		
-		li {
-			a {
-				color: $black;
-				
-			&:after {
-				content: url(/wp-content/themes/cr-maryland/assets/images/nav-arrow-black.svg);
-			}
-				
-			}
-		}
-		
-	}
-	
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p {
-		span.highlighter {
-			background-color: $black;
-			color: $white;
-		}
-	}
-
-	button, 
-	.button {
-		background-color: $theme-yellow;
-		color: $black;
-	}
-	
-}
-
-body.rent {
-	
-	header.article-header ul {
-		background-color: $theme-red;
-		border-color: $theme-red;
-		
-		li {
-			a {
-				color: $white;
-				
-			&:after {
-				content: url(/wp-content/themes/cr-maryland/assets/images/nav-arrow-white.svg);
-			}
-				
-			}
-		}
-		
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p {
-		span.highlighter {
-			background-color: $theme-red;
-			color: $white;
-		}
-	}
-
-	button, 
-	.button {
-		background-color: $theme-red;
-		color: $white;
-	}
-	
-}
-
-body.buy {
-	
-	header.article-header ul {
-		background-color: $black;
-		border-color: $black;
-		
-		li {
-			a {
-				color: $white;
-				
-			&:after {
-				content: url(/wp-content/themes/cr-maryland/assets/images/nav-arrow-white.svg);
-			}
-				
-			}
-		}
-		
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p {
-		span.highlighter {
-			background-color: $black;
-			color: $white;
-		}
-	}
-
-	button, 
-	.button {
-		background-color: $black;
-		color: $white;
-	}
-	
-}
-
-body.community {
-	
-	header.article-header ul {
-		background-color: $theme-gray;
-		border-color: $theme-gray;
-		
-		li {
-			a {
-				color: $black;
-				
-			&:after {
-				content: url(/wp-content/themes/cr-maryland/assets/images/nav-arrow-black.svg);
-			}
-				
-			}
-		}
-		
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p {
-		span.highlighter {
-			background-color: $theme-gray;
-			color: $black;
-		}
-	}
-
-	button, 
-	.button {
-		background-color: $theme-gray;
-		color: $black;
-	}
-	
-}
-
-article.invest,
-article.sell,
-article.community {
-	span.highlighter {
-		color: $black;
-	}
-}
-
-article.buy,
-article.rent {
-	span.highlighter {
-		color: $white;
-	}	
-}
-
-article.invest {
-	span.highlighter {
-		background-color: $theme-yellow;
-	}
-}
-
-article.sell {
-	span.highlighter {
-		background-color: $white;
-	}
-}
-
-article.rent {
-	span.highlighter {
-		background-color: $theme-red;
-	}
-}
-
-article.buy {
-	span.highlighter {
-		background-color: $black;
-	}
-}
-
-article.community {
-	span.highlighter {
-		background-color: $theme-gray;
-	}
-}
-
-
-.bg-invest,
-.bg-sell,
-.bg-community {
-	color: $black;	
-	
-	a {
-		color: $black;	
-	}
-	
-}
-
-.bg-rent,
-.bg-buy {
-	color: $white;
-	
-	a {
-		color: $white !important;
-		
-	&:after {
-		content: url('/wp-content/themes/cr-maryland/assets/images/nav-arrow-white.svg') !important;
-	}
-	
-	}
-	
-}
-
-.bg-invest {
-	background-color: $theme-yellow;
-}
-
-.bg-sell {
-	background-color: $white;	
-}
-
-.bg-rent {
-	background-color: $theme-red;		
-}
-
-.bg-buy {
-	background-color: $black;
-}
-
-.bg-community {
-	background-color: $theme-gray;	
-}
 
 /*********************
 GLOBAL ELEMENTS
 *********************/
+.article-header {
+	position: relative;
+	padding-bottom: 5.35em;
+	
+	@include breakpoint(medium) {
+		margin-bottom: 6em;
+	}
+}
+
+section.module {
+	margin-bottom: 4em;
+	
+	@include breakpoint(medium) {
+		margin-bottom: 6.3em;
+	}
+	
+	&.last {
+		margin-bottom: 6.05em;
+		
+		@include breakpoint(medium) {
+			margin-bottom: 9.05em;
+		}
+	}
+	
+}
+
+.template-banner {
+	
+	.press-label {
+		padding-bottom: 1.2em;
+		font-size: rem-calc(12);
+	}
+	
+	h1 {
+		font-size: rem-calc(40);
+		line-height: 1.08;
+		margin-bottom: 0.075em;
+		
+		@include breakpoint (medium) {
+			font-size: rem-calc(54);
+		}
+		
+		@include breakpoint (tablet) {
+			font-size: rem-calc(74);
+		}
+		
+	}
+	
+	p {
+		font-size: rem-calc(22);
+		line-height: 1.836;
+	}
+	
+}
+
+// Accordions
+	.accordion-item {
+		border-bottom: 1px solid $black;
+		
+		.accordion-title {
+			
+		&:before {
+			margin: 0;
+			content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-black.svg);
+			transform: rotate(90deg) rotateY(180deg) translateX(50%);
+			transition: transform 0.3s ease;	
+		}
+			
+		}
+		
+	&.is-active {
+		.accordion-title {
+			
+			&:before {
+				transform: rotate(90deg) rotateY(0deg) translateX(-50%);
+			}
+			
+		}
+	}
+
+	}
+
+// Slider Buttons
+button.slider-button {
+	cursor: pointer;
+	width: 36px;
+	height: 192px;
+	position: absolute;
+	z-index: 1;
+	background-color: #D9DADB !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 50%;
+    transform: translateY(-50%);
+	
+&.slick-prev {
+	left: 0;
+}
+
+&.slick-next {
+	right: 0;
+}
+	
+}
+
+
+// ALM Load Button
+	.alm-btn-wrap {
+		padding-bottom: 9.3em !important;
+    
+		.alm-load-more-btn {
+			box-shadow: 0 0 0 !important;
+			font-weight: bold !important;
+			text-transform: uppercase;
+			display: inline-flex !important;
+			align-items: center;
+			border-radius: 0 !important;
+			padding: 2.367em 4.0948em !important;
+			
+		&.loading:before {
+			top: 15px !important;
+		    left: 8px !important;
+		    border-radius: 0 !important;
+		}
+		
+		&.done {
+			display: none !important;
+			opacity: 0 !important;
+		}
+			
+		}
+	}
+
+// Underlined Links
+a.lm-link {
+	text-decoration: underline;
+	color: $black;
+}
 
 // Round Arrow Links
 span.circle-arrow-link {
@@ -458,8 +354,9 @@ span.circle-arrow-link {
 		position: relative;
 		color: $black;
 		text-transform: uppercase;
+		text-decoration: none;
 		
-	&:after {
+	&:before {
 		content: '';
 		position: absolute;
 		bottom: 0;
@@ -467,13 +364,12 @@ span.circle-arrow-link {
 		right: 0;
 		border-bottom: 3px solid $black;
 	}
-		
+
 	}
 	
-
-	
 &:after {
-	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-black.svg);
+	position: relative;
+    top: 0.3em;
 }
 		
 }
@@ -485,6 +381,21 @@ li.community > a,
 li.rent > a,
 li.buy > a {
 	display: flex;
+}
+
+.r-arrow {
+	&:after {
+		transition: transform 0.4s ease-out;
+	}
+	
+&:hover {
+	
+	&:after {
+		transform: translateX(12px);
+	}
+	
+}
+	
 }
 
 body.invest .r-arrow,
@@ -528,6 +439,7 @@ a.button.bg-sell,
 a.button.bg-community {
 	
 &:after {
+	margin-left: 1.5em;
 	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-black.svg);
 }
 
@@ -543,6 +455,7 @@ li.community > a {
 	
 }
 
+.alm-btn-wrap .alm-load-more-btn,
 .resource-links .single-row a,
 body.rent .r-arrow,
 body.buy .r-arrow,
@@ -550,6 +463,7 @@ a.button.bg-rent,
 a.button.bg-buy, {
 	
 &:after {
+	margin-left: 1.5em;
 	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-white.svg);
 }
 
@@ -564,10 +478,28 @@ li.buy > a {
 	
 }
 
-
 button, 
 .button {
+	font-weight: bold;
+}
+
+.blog-cat-title {
+	display: flex;
+	align-items: center;
+	padding-bottom: 1.15em;
 	
+	@include breakpoint(medium) {
+		padding-bottom: 3.15em;
+	}
+	
+	img {
+		margin-right: 1.4em;
+	}
+	
+	h2 {
+		margin: 0;
+	}
+		
 }
 
 
@@ -598,8 +530,8 @@ POSTS & CONTENT STYLES
 	}
 
 	.alignleft, img.alignleft { 
-		margin-right: 1em; 
-		margin-bottom: 1em;
+		margin-right: 39px; 
+		margin-bottom: 39px;
 		display: inline; 
 		float: left; 
 	}
@@ -976,13 +908,6 @@ SIDEBARS & ASIDES
 	ul {
 		margin: 0;
 	}
-}
-/*********************
-FOOTER STYLES
-*********************/
-.footer {
-	clear: both;
-	margin-top: 1em;
 }
 	
 /*********************

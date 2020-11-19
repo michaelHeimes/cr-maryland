@@ -1,0 +1,39 @@
+.image-gallery-slider {
+	margin-bottom: 16px;
+	
+	>.grid-container.fluid {
+		padding: 0;	
+	}
+	
+	.gallery-slider {
+		
+		.slick-track {
+			display: flex;
+			align-items: baseline;
+
+			.single-slide {
+				
+				img {
+					margin-right: 18px;
+					width: 80vw;
+				}
+				
+			&:nth-child(odd) {
+				img {
+					max-width: 500px;
+				}
+			}
+	
+			&:nth-child(even) {
+				img {
+					max-width: 288px;
+				}
+			}
+			
+			}
+			
+		}
+		
+	}
+		
+}

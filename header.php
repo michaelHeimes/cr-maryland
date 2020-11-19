@@ -43,7 +43,7 @@
 			
 			<div class="off-canvas-content" data-off-canvas-content>
 				
-				<header class="header" role="banner" data-sticky data-margin-top="0" data-sticky-on="small">
+				<header class="header<?php if ( get_field('logo_color') == 'white'):?> logo-white<?php endif;?>" role="banner" data-sticky data-margin-top="0" data-sticky-on="small">
 
 					<div class="header-top">
 						<div class="grid-container fluid">
@@ -52,23 +52,57 @@
 								<div class="left cell shrink">
 									<ul class="menu">
 										<li><a href="<?php echo home_url(); ?>">
+											
 												<span class="show-for-sr"><?php bloginfo('name'); ?></span>
+												
 												<?php 
 												$image = get_field('top_bar_logo', 'option');
 												if( !empty( $image ) ): ?>
-												    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+												    <img class="hide-for-medium" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 												<?php endif; ?>
+												
+												
+												<?php if ( get_field('logo_color') == 'white'):?>
+												
+													<?php 
+													$image = get_field('top_bar_logo_white', 'option');
+													if( !empty( $image ) ): ?>
+													    <img class="logo-white show-for-medium" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+													<?php endif; ?>
+													
+													<?php 
+													$image = get_field('top_bar_logo', 'option');
+													if( !empty( $image ) ): ?>
+													    <img class="logo-black show-for-medium" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+													<?php endif; ?>
+													
+												<?php else:?>
+												
+													<?php 
+													$image = get_field('top_bar_logo', 'option');
+													if( !empty( $image ) ): ?>
+													    <img class="show-for-medium" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+													<?php endif; ?>
+												
+												<?php endif;?>
+												
 										</a></li>
 									</ul>
 								</div>
 								
 								<div class="right cell shrink">
-									<div class="top"><?php joints_theme_nav(); ?></div>
-									<div class="bottom">
+									<div class="top show-for-tablet"><?php joints_theme_nav(); ?></div>
+									<div class="bottom text-right">
 										
-										<a id="toggle-search" href="#">Search</a>
+										<a id="toggle-search" href="#">
+											<img src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="search-icon" />											
+											Search
+										</a>
 										
-										<a id="toggle-nav" href="#">Menu</a>
+										<a id="toggle-nav" href="#">
+											<img src="<?php echo get_template_directory_uri(); ?>/assets/images/menu.svg" alt="menu-logo" />
+											Menu
+										</a>
 										
 									</div>
 								</div>		
@@ -103,7 +137,7 @@
 									<form method="get" action="/">
 										<input type="text" name="s" placeholder="Enter search terms here" class="">
 										<input type="hidden" name="" value="">
-										<button type="submit">S</button>
+										<button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/search-white.svg" alt="search-icon" />	</button>
 										<button type="button" id="close-search">
 											<img src="<?php echo get_template_directory_uri(); ?>/assets/images/hn-close.svg" alt="hidden-nan-close"/>
 										</button>

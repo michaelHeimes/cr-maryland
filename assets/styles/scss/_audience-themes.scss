@@ -1,0 +1,578 @@
+.article-header {
+	
+	> .left {
+		height: 300px;
+	    background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		
+		@include breakpoint(medium) {	
+			position: absolute;
+		    left: 0;
+		    top: -96px;
+		    bottom: 0;
+			height: auto;
+			width: 30%;
+		}
+
+		@include breakpoint(xlarge) {
+		    width: 33.33333%;
+		}
+		
+	}
+	
+	.right {
+		position: relative;
+		padding-top: 2.35em;
+		
+		.theme-name {
+			font-size: rem-calc(12);
+		}
+		
+		h1 {
+			font-size: rem-calc(50);
+			line-height: 1.08;
+			margin-bottom: 0.15em;
+			
+			@include breakpoint(tablet) {
+				font-size: rem-calc(74);
+			}
+			
+		}
+		
+		.copy-wrap {
+			font-size: rem-calc(22);
+			font-weight: 600;
+			padding-bottom: 1.45em;
+		}
+		
+	}
+	
+	.nav-wrap {
+		margin-top: 3.6em;
+		position: relative;
+		border: 19px solid $white;
+		
+		ul {
+			border-width: 3px;
+			border-style: solid;
+			display: flex;
+			flex-direction: column;
+			
+			@include breakpoint(medium) {
+				flex-direction: row;
+			}
+			
+			li {
+				@include breakpoint(medium) {
+					margin: 0 1%;
+				}
+				
+				a {
+					width: 100%;
+					display: inline-block;
+					font-weight: bold;
+					padding: 1em .5em;
+					font-size: rem-calc(15);
+
+					@include breakpoint(medium) {
+						font-size: rem-calc(13);
+						width: auto;
+						padding: 2em 1em;
+					}
+					
+					@include breakpoint(tablet) {
+						font-size: rem-calc(15);
+					}
+					
+					
+				&:after {
+					display: inline-block;
+					width: .299375em;
+					height: .598em;
+					margin-left: .85em;
+					transition: transform 0.4s ease-out;
+					
+					@include breakpoint(medium) {
+						margin-left: .2em;
+					}
+					
+					@include breakpoint(tablet) {
+						margin-left: .85em;
+					}
+					
+				}
+				
+					span {
+						display: inline-block;
+						position: relative;
+					}
+				
+				&:hover:after {
+					transform: translateX(12px);
+				}
+					
+				}
+				
+			&.active {
+				a {
+					
+					span:after {
+					    content: "";
+					    position: absolute;
+					    border-width: 0 0 2px 0;
+					    border-style: solid;
+					    left: 0;
+					    right: 0;
+					    width: auto;
+					    bottom: -8px;
+					    height: auto;
+					    margin: 0;
+					}
+					
+				}
+			}
+				
+			}
+		
+		&:not(.blog-nav) {
+			li {
+				width: 100%;
+
+				@include breakpoint(medium) {
+					width: auto;
+				}
+			}
+		}
+			
+		}
+		
+	}
+}
+
+
+
+body.invest {
+	
+	header.article-header ul {
+		background-color: $theme-yellow;
+		border-color: $theme-yellow;
+		
+		li {
+			a {
+				color: $black;
+				
+			&:after {
+				content: url(/wp-content/themes/cr-maryland/assets/images/nav-arrow-black.svg);
+			}
+			
+			}
+			
+		&.active {
+			a {
+				
+				&:after {
+					display: none;
+				}
+					
+				span:after {
+				    border-color: $black;
+				}
+				
+			}
+		}
+				
+		}
+		
+	}
+	
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		span.highlighter {
+			background-color: $theme-yellow;
+		}
+	}
+
+	button, 
+	.button {
+		background-color: $theme-yellow;
+		color: $black;
+	}
+	
+}
+
+body.sell {
+	
+	header.article-header ul {
+		background-color: $white;
+		border-color: $black;
+		
+		li {
+			a {
+				color: $black;
+				
+			&:after {
+				content: url(/wp-content/themes/cr-maryland/assets/images/nav-arrow-black.svg);
+			}
+			
+		}
+			
+		&.active {
+			a {
+				
+				&:after {
+					display: none;
+				}
+					
+				span:after {
+				    border-color: $black;
+				}
+				
+			}
+		}
+		
+		}
+				
+	}
+	
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		span.highlighter {
+			background-color: $black;
+			color: $white;
+		}
+	}
+
+	button, 
+	.button {
+		background-color: $theme-yellow;
+		color: $black;
+	}
+	
+}
+
+body.rent {
+	
+	header.article-header ul {
+		background-color: $theme-red;
+		border-color: $theme-red;
+		
+		li {
+			a {
+				color: $white;
+				
+			&:after {
+				content: url(/wp-content/themes/cr-maryland/assets/images/nav-arrow-white.svg);
+			}
+				
+			}
+			
+		&.active {
+			a {
+				
+				&:after {
+					display: none;
+				}
+					
+				span:after {
+				    border-color: $white;
+				}
+				
+			}
+		}
+			
+		}
+		
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		span.highlighter {
+			background-color: $theme-red;
+			color: $white;
+		}
+	}
+
+	button, 
+	.button {
+		background-color: $theme-red;
+		color: $white;
+	}
+	
+}
+
+body.buy {
+	
+	header.article-header ul {
+		background-color: $black;
+		border-color: $black;
+		
+		li {
+			a {
+				color: $white;
+				
+			&:after {
+				content: url(/wp-content/themes/cr-maryland/assets/images/nav-arrow-white.svg);
+			}
+				
+			}
+			
+		&.active {
+			a {
+				
+				&:after {
+					display: none;
+				}
+					
+				span:after {
+				    border-color: $white;
+				}
+				
+			}
+		}
+			
+		}
+		
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		span.highlighter {
+			background-color: $black;
+			color: $white;
+		}
+	}
+
+	button, 
+	.button {
+		background-color: $black;
+		color: $white;
+	}
+	
+}
+
+body.community {
+	
+	header.article-header ul {
+		background-color: $theme-gray;
+		border-color: $theme-gray;
+		
+		li {
+			a {
+				color: $black;
+				
+			&:after {
+				content: url(/wp-content/themes/cr-maryland/assets/images/nav-arrow-black.svg);
+			}
+				
+			}
+			
+		&.active {
+			a {
+				
+				&:after {
+					display: none;
+				}
+					
+				span:after {
+				    border-color: $black;
+				}
+				
+			}
+		}
+			
+		}
+		
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		span.highlighter {
+			background-color: $theme-gray;
+			color: $black;
+		}
+	}
+
+	button, 
+	.button {
+		background-color: $theme-gray;
+		color: $black;
+	}
+	
+}
+
+.page-template-audience-blog {
+	header.article-header ul li {
+		
+	&.bg-invest,
+	&.bg-sell,
+	&.bg-community {
+		a {
+			color: $black;
+
+			&:after {
+				content: url(/wp-content/themes/cr-maryland/assets/images/nav-arrow-black.svg);
+			}
+			
+		}
+	}
+	
+	&.bg-rent,
+	&.bg-buy {
+		a {
+			color: $white;
+
+			&:after {
+				content: url(/wp-content/themes/cr-maryland/assets/images/nav-arrow-white.svg);
+			}
+			
+		}
+	}
+		
+	}
+}
+
+article.invest,
+article.sell,
+article.community {
+	span.highlighter {
+		color: $black;
+	}
+}
+
+article.buy,
+article.rent {
+	span.highlighter {
+		color: $white;
+	}	
+}
+
+article.invest {
+	span.highlighter {
+		background-color: $theme-yellow;
+	}
+}
+
+article.sell {
+	span.highlighter {
+		background-color: $white;
+	}
+}
+
+article.rent {
+	span.highlighter {
+		background-color: $theme-red;
+	}
+}
+
+article.buy {
+	span.highlighter {
+		background-color: $black;
+	}
+}
+
+article.community {
+	span.highlighter {
+		background-color: $theme-gray;
+	}
+}
+
+.bg-invest,
+.bg-sell,
+.bg-community,
+a.bg-invest,
+a.bg-sell,
+a.bg-community {
+	color: $black;	
+	
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	a {
+		color: $black;	
+	}
+	
+}
+
+.bg-rent,
+.bg-buy,
+a.bg-rent,
+a.bg-buy {
+	color: $white;
+	
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	a {
+		color: $white !important;
+	}
+	
+}
+
+.blog-nav {
+	.bg-rent,
+	.bg-buy {
+		
+		a {
+			
+		&:after {
+			content: url('/wp-content/themes/cr-maryland/assets/images/nav-arrow-white.svg') !important;
+		}
+		
+		}
+		
+	}
+}
+
+.bg-invest {
+	background-color: $theme-yellow !important;
+}
+
+.bg-sell {
+	background-color: $white !important;	
+}
+
+.bg-rent {
+	background-color: $theme-red !important;		
+}
+
+.bg-buy {
+	background-color: $black !important;
+}
+
+.bg-community {
+	background-color: $theme-gray !important;	
+}

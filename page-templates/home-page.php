@@ -15,11 +15,11 @@ get_header(); ?>
 				
 			<div class="banner">
 				<div class="grid-container">
-					<div class="grid-x grid-padding-x">
+					<div class="grid-x grid-padding-x align-middle">
 						
 						
 						
-						<div class="left cell small-12 medium-6 large-7">
+						<div class="left cell small-12 medium-6 large-9">
 							
 							<?php 
 							$image = get_field('banner_left_image');
@@ -29,9 +29,12 @@ get_header(); ?>
 							</div>
 							<?php endif; ?>
 							
-							<div class="text-wrap">
+							<div class="text-wrap left">
 								
-								<h1><?php the_field('banner_left_heading');?></h1>
+								<h1 class="left-heading weight-black">
+									<span class="bg-invest"><?php the_field('banner_left_heading_l1');?></span><br>
+									<span class="bg-invest"><?php the_field('banner_left_heading_l2');?></span>
+								</h1>
 								
 								<?php if( have_rows('banner_left_links') ):?>
 									<?php while ( have_rows('banner_left_links') ) : the_row();?>	
@@ -51,9 +54,35 @@ get_header(); ?>
 								
 							</div>
 							
+							<div class="text-wrap right show-for-tablet">
+								
+								<h1 class="right-heading weight-black">
+									<span class="bg-sell"><?php the_field('banner_right_heading_l1');?></span><br>
+									<span class="bg-sell"><?php the_field('banner_right_heading_l2');?></span>
+								</h1>
+								
+								<?php if( have_rows('banner_right_links') ):?>
+									<?php while ( have_rows('banner_left_links') ) : the_row();?>	
+									
+									<?php 
+									$link = get_sub_field('single_link');
+									if( $link ): 
+									    $link_url = $link['url'];
+									    $link_title = $link['title'];
+									    $link_target = $link['target'] ? $link['target'] : '_self';
+									    ?>
+									    <a class="button bg-sell r-arrow" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+									<?php endif; ?>
+								
+									<?php endwhile;?>
+								<?php endif;?>
+								
+							</div>
+
+							
 						</div>
 
-						<div class="right cell small-12 medium-6 large-5">
+						<div class="right cell small-12 medium-6 large-auto">
 							
 							<?php 
 							$image = get_field('banner_right_image');
@@ -63,9 +92,12 @@ get_header(); ?>
 							</div>
 							<?php endif; ?>
 							
-							<div class="text-wrap">
+							<div class="text-wrap hide-for-tablet">
 								
-								<h1><?php the_field('banner_right_heading');?></h1>
+								<h1 class="right-heading weight-black">
+									<span class="bg-sell"><?php the_field('banner_right_heading_l1');?></span><br>
+									<span class="bg-sell"><?php the_field('banner_right_heading_l2');?></span>
+								</h1>
 								
 								<?php if( have_rows('banner_right_links') ):?>
 									<?php while ( have_rows('banner_left_links') ) : the_row();?>	
@@ -103,7 +135,7 @@ get_header(); ?>
 					<div class="grid-x grid-padding-x">		
 						
 						<div class="cell small-12 medium-10 medium-offset-1 tablet-8 tablet-offset-2 text-center">
-							<h2><?php the_field('s1_heading');?></h2>
+							<h2 class="small-caps"><?php the_field('s1_heading');?></h2>
 							<div class="copy-wrap"><?php the_field('s1_copy');?></div>
 							
 							<?php 
@@ -113,7 +145,7 @@ get_header(); ?>
 							    $link_title = $link['title'];
 							    $link_target = $link['target'] ? $link['target'] : '_self';
 							    ?>
-							    <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+							    <a class="cta-link caps weight-bold" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 							<?php endif; ?>
 							
 							<?php if( have_rows('four_square_navigation') ):?>
@@ -124,10 +156,21 @@ get_header(); ?>
 								<?php if( have_rows('top_left') ):?>
 									<?php while ( have_rows('top_left') ) : the_row();?>	
 									
-									<a class="cell" href="<?php the_sub_field('page_link'); ?>">
+									<?php $theme = get_sub_field('theme');?>
+									
+									<?php
+										$imgID = get_sub_field('background_image');
+										$imgSize = "full";
+										$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+									
+									?>
+																		
+									<a class="cell bg-<?php echo $theme;?> text-left" href="<?php the_sub_field('page_link'); ?>" style="background-image: url(<?php echo $imgArr[0]; ?> );">
 										
-										<div class="theme-label">
-										<?php $theme = get_sub_field('theme');
+										<div class="mask bg-<?php echo $theme;?>"></div>
+										
+										<div class="theme-label caps weight-black">
+										<?php 
 											
 											if ($theme == 'invest') {
 												echo 'invest';
@@ -147,7 +190,9 @@ get_header(); ?>
 										?>										
 										</div>
 										
-										<h3><?php the_sub_field('heading');?></h3>
+										<h3 class="weight-black"><?php the_sub_field('heading');?></h3>
+										
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/r-arrow-black.svg" alt="r-arrow-black" />
 										
 									</a>
 								
@@ -157,9 +202,20 @@ get_header(); ?>
 								<?php if( have_rows('top_right') ):?>
 									<?php while ( have_rows('top_right') ) : the_row();?>	
 									
-									<a class="cell" href="<?php the_sub_field('page_link'); ?>">
+									<?php $theme = get_sub_field('theme');?>
+									
+									<?php
+										$imgID = get_sub_field('background_image');
+										$imgSize = "full";
+										$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+									
+									?>
+																		
+									<a class="cell bg-<?php echo $theme;?> text-left" href="<?php the_sub_field('page_link'); ?>" style="background-image: url(<?php echo $imgArr[0]; ?> );">
 										
-										<div class="theme-label">
+										<div class="mask bg-<?php echo $theme;?>"></div>
+										
+										<div class="theme-label caps weight-black">
 										<?php $theme = get_sub_field('theme');
 											
 											if ($theme == 'invest') {
@@ -180,7 +236,9 @@ get_header(); ?>
 										?>										
 										</div>
 										
-										<h3><?php the_sub_field('heading');?></h3>
+										<h3 class="weight-black"><?php the_sub_field('heading');?></h3>
+										
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/r-arrow-black.svg" alt="r-arrow-black" />
 										
 									</a>
 								
@@ -190,9 +248,20 @@ get_header(); ?>
 								<?php if( have_rows('bottom_left') ):?>
 									<?php while ( have_rows('bottom_left') ) : the_row();?>	
 									
-									<a class="cell" href="<?php the_sub_field('page_link'); ?>">
+									<?php $theme = get_sub_field('theme');?>
+									
+									<?php
+										$imgID = get_sub_field('background_image');
+										$imgSize = "full";
+										$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+									
+									?>
+																		
+									<a class="cell bg-<?php echo $theme;?> text-left" href="<?php the_sub_field('page_link'); ?>" style="background-image: url(<?php echo $imgArr[0]; ?> );">
 										
-										<div class="theme-label">
+										<div class="mask bg-<?php echo $theme;?>"></div>
+										
+										<div class="theme-label caps weight-black">
 										<?php $theme = get_sub_field('theme');
 											
 											if ($theme == 'invest') {
@@ -213,8 +282,10 @@ get_header(); ?>
 										?>										
 										</div>
 										
-										<h3><?php the_sub_field('heading');?></h3>
+										<h3 class="weight-black"><?php the_sub_field('heading');?></h3>
 										
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/r-arrow-white.svg" alt="r-arrow-white" />
+																				
 									</a>
 								
 									<?php endwhile;?>
@@ -223,9 +294,20 @@ get_header(); ?>
 								<?php if( have_rows('bottom_right') ):?>
 									<?php while ( have_rows('bottom_right') ) : the_row();?>	
 									
-									<a class="cell" href="<?php the_sub_field('page_link'); ?>">
+									<?php $theme = get_sub_field('theme');?>
+									
+									<?php
+										$imgID = get_sub_field('background_image');
+										$imgSize = "full";
+										$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+									
+									?>
+																		
+									<a class="cell bg-<?php echo $theme;?> text-left" href="<?php the_sub_field('page_link'); ?>" style="background-image: url(<?php echo $imgArr[0]; ?> );">
 										
-										<div class="theme-label">
+										<div class="mask bg-<?php echo $theme;?>"></div>
+										
+										<div class="theme-label caps weight-black">
 										<?php $theme = get_sub_field('theme');
 											
 											if ($theme == 'invest') {
@@ -246,8 +328,9 @@ get_header(); ?>
 										?>										
 										</div>
 										
-										<h3><?php the_sub_field('heading');?></h3>
+										<h3 class="weight-black"><?php the_sub_field('heading');?></h3>
 										
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/r-arrow-white.svg" alt="r-arrow-white" />										
 									</a>
 								
 									<?php endwhile;?>
@@ -276,7 +359,7 @@ get_header(); ?>
 					<div class="grid-x grid-padding-x">	
 						
 						<div class="heading-tri-color-copy left cell small-12 medium-6">
-							<h2 class="tri-bar-heading"><?php the_field('s2_heading');?></h2>
+							<h2 class="tri-bar-heading small-caps"><?php the_field('s2_heading');?></h2>
 							
 								<div class="tri-color-bar">
 									<span></span>
@@ -295,13 +378,13 @@ get_header(); ?>
 								    $link_title = $link['title'];
 								    $link_target = $link['target'] ? $link['target'] : '_self';
 								    ?>
-								    <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+								    <a class="lm-link caps weight-bold" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 								<?php endif; ?>
 							
 						</div>
 
 						<div class="four-col-numbers-labels right cell small-12 medium-6">
-							<div class="grid-x grid-padding-x small-up-2 text-center">
+							<div class="grid-x grid-margin-x small-up-2 text-center">
 							
 							<?php if( have_rows('four_sets_numbers_and_labels') ):?>
 								<?php while ( have_rows('four_sets_numbers_and_labels') ) : the_row();?>	
@@ -310,11 +393,11 @@ get_header(); ?>
 									<?php while ( have_rows('set_1') ) : the_row();?>	
 								
 									<div class="cell">
-										<div class="number">
+										<div class="number weight-bold">
 											<?php the_sub_field('number');?>
 										</div>
 										
-										<div class="label-text">
+										<div class="label-text weight-bold">
 											<?php the_sub_field('label');?>
 										</div>
 									</div>
@@ -326,11 +409,11 @@ get_header(); ?>
 									<?php while ( have_rows('set_2') ) : the_row();?>	
 								
 									<div class="cell">
-										<div class="number">
+										<div class="number weight-bold">
 											<?php the_sub_field('number');?>
 										</div>
 										
-										<div class="label-text">
+										<div class="label-text weight-bold">
 											<?php the_sub_field('label');?>
 										</div>
 									</div>
@@ -342,11 +425,11 @@ get_header(); ?>
 									<?php while ( have_rows('set_3') ) : the_row();?>	
 								
 									<div class="cell">
-										<div class="number">
+										<div class="number weight-bold">
 											<?php the_sub_field('number');?>
 										</div>
 										
-										<div class="label-text">
+										<div class="label-text weight-bold">
 											<?php the_sub_field('label');?>
 										</div>
 									</div>
@@ -358,11 +441,11 @@ get_header(); ?>
 									<?php while ( have_rows('set_4') ) : the_row();?>	
 								
 									<div class="cell">
-										<div class="number">
+										<div class="number weight-bold">
 											<?php the_sub_field('number');?>
 										</div>
 										
-										<div class="label-text">
+										<div class="label-text weight-bold">
 											<?php the_sub_field('label');?>
 										</div>
 									</div>
@@ -387,7 +470,7 @@ get_header(); ?>
 						<div class="left cell small-12 medium-6">
 							
 							<?php if( $heading = get_field('rl_heading') ):?>
-								<h2><?php echo $heading;?></h2>
+								<h2 class="weight-black"><?php echo $heading;?></h2>
 							<?php endif;?>
 							
 						</div>
@@ -411,7 +494,7 @@ get_header(); ?>
 											
 											<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
 											
-												<div class="icon-wrap">
+												<div class="icon-wrap text-center">
 													<?php 
 													$image = get_sub_field('icon');
 													if( !empty( $image ) ): ?>
@@ -419,7 +502,7 @@ get_header(); ?>
 													<?php endif; ?>
 												</div>
 												
-												<div class="label-wrap">			
+												<div class="label-wrap weight-black text-left">			
 													<?php echo esc_html( $link_title ); ?>
 												</div>
 											
@@ -437,11 +520,59 @@ get_header(); ?>
 					</div>
 				</div>
 			</section>
+			
+			
+			<section class="blog">
+				<div class="grid-container">
+					<div class="grid-x grid-padding-x">
+							
+						<div class="blog-cat-title cell small-12">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-round-black.svg" alt="logo-round-black" />
+							<h2 class="weight-black">Blog</h2>
+						</div>
+						
+					</div>
+							
+							
+					<div class="grid-x grid-padding-x blog-container">
+						
+						<div class="blog-slider cell small-12">
+														
+							<?php				
+						    $args = array(  
+						        'post_type' => 'post',
+						        'post_status' => 'publish',
+						        'posts_per_page' => 999999, 
+								'orderby'=> 'date', 
+								'order' => 'DESC'
+						    );
+						
+						    $loop = new WP_Query( $args ); 
+						        
+						    while ( $loop->have_posts() ) : $loop->the_post();?>
+						    
+						        <?php get_template_part( 'parts/loop', 'archive' ); ?>
+						    
+						    <?php endwhile;
+						    wp_reset_postdata();?>
+							
+						</div>
+						
+					</div>
+				</div>
+			</section>
 				
 			
-			<section class="full-nav">
+			<section class="full-nav on-page">
 				<div class="grid-container">
 					<?php joints_full_nav(); ?>
+					
+					<div class="grid-x grid-padding-x">
+						<div class="cell small-12">
+							<div class="divider"></div>
+						</div>
+					</div>
+					
 				</div>
 			</section>	
 			

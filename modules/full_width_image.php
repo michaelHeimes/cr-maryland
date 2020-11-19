@@ -1,4 +1,4 @@
-<section class="full-width-img text-center">
+<section class="full-width-img module text-center" <?php if(get_sub_field('remove_bottom_margin')):?>style="margin-bottom: 0;"<?php endif;?>>
 	
 	<?php $image = get_sub_field('image'); 
 	$image_size = 'full-width-img';

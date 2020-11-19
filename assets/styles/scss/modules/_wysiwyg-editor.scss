@@ -1,0 +1,33 @@
+.wysiwyg-editor {
+	p {
+		margin-block-end: 2em;
+	}
+	
+	a {
+		color: $black;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		
+		li {
+			position: relative;
+			padding-left: 2.2em;
+			padding-bottom: 1.55em;
+			
+		&:before {
+			content: url(/wp-content/themes/cr-maryland/assets/images/list-bullet.svg);
+			margin-right: .9em;
+		    position: absolute;
+		    top: 0.15em;
+		    left: 0;
+		}
+			
+		}
+	}
+	
+}

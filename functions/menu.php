@@ -3,7 +3,7 @@
 // Register menus
 register_nav_menus(
 	array(
-		'main-nav'		=> __( 'The Main Menu', 'jointswp' ),		// Main nav in header
+		'full-nav'		=> __( 'The Full Menu', 'jointswp' ),		// Main nav in header
 		'theme-nav'		=> __( 'The Theme Menu', 'jointswp' ),		// Main nav in header
 		'invest-nav'		=> __( 'The Invest Menu', 'jointswp' ),		// Main nav in header
 		'sell-nav'		=> __( 'The Sell Menu', 'jointswp' ),		// Main nav in header
@@ -56,6 +56,8 @@ function joints_invest_nav() {
 		'depth'				=> 5,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
 		'add_li_class'      => 'cell shrink',
+		'link_before'       => '<span>',
+		'link_after'        => '</span>',
 		'walker'			=> new Topbar_Menu_Walker()
 	));
 }
@@ -71,6 +73,8 @@ function joints_sell_nav() {
 		'depth'				=> 5,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
 		'add_li_class'      => 'cell shrink',
+		'link_before'       => '<span>',
+		'link_after'        => '</span>',		
 		'walker'			=> new Topbar_Menu_Walker()
 	));
 }
@@ -86,6 +90,8 @@ function joints_rent_nav() {
 		'depth'				=> 5,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
 		'add_li_class'      => 'cell shrink',
+		'link_before'       => '<span>',
+		'link_after'        => '</span>',		
 		'walker'			=> new Topbar_Menu_Walker()
 	));
 }
@@ -101,6 +107,8 @@ function joints_buy_nav() {
 		'depth'				=> 5,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
 		'add_li_class'      => 'cell shrink',
+		'link_before'       => '<span>',
+		'link_after'        => '</span>',		
 		'walker'			=> new Topbar_Menu_Walker()
 	));
 }
@@ -116,6 +124,8 @@ function joints_community_nav() {
 		'depth'				=> 5,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
 		'add_li_class'      => 'cell shrink',
+		'link_before'       => '<span>',
+		'link_after'        => '</span>',
 		'walker'			=> new Topbar_Menu_Walker()
 	));
 }
@@ -125,12 +135,14 @@ function joints_audience_blog_nav() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
 		'menu_id'			=> 'audience-blog-nav',					// Adding custom nav id
-		'menu_class'		=> 'medium-horizontal menu grid-x grid-padding-x align-center small-up-1 medium-up-5',	// Adding custom nav class
+		'menu_class'		=> 'blog-nav medium-horizontal menu grid-x grid-padding-x align-center small-up-1 medium-up-5',	// Adding custom nav class
 		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown">%3$s</ul>',
 		'theme_location'	=> 'audience-blog-nav',					// Where it's located in the theme
 		'depth'				=> 5,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
 		'add_li_class'      => 'cell',
+		'link_before'       => '<span>',
+		'link_after'        => '</span>',
 		'walker'			=> new Topbar_Menu_Walker()
 	));
 }

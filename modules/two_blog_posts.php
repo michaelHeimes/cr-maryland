@@ -1,9 +1,9 @@
-<section class="two-blog-posts">
+<section class="two-blog-posts in-archive module" <?php if(get_sub_field('remove_bottom_margin')):?>style="margin-bottom: 0;"<?php endif;?>>
 	<div class="grid-container">
 		
 		<div class="top grid-x grid-padding-x">
 			
-			<div class="cell shrink logo-wrap">
+			<div class="cell shrink blog-cat-title">
 				
 				<?php $theme = get_field('page_theme');?>
 					
@@ -29,16 +29,16 @@
 					
 				<?php endif;?>
 				
+				<h2 class="cell shrink">Blog</h2>
+				
 			</div>
-			
-			<h2 class="cell shrink">Blog</h2>
-			
+						
 		</div>
 			
 		<?php
 		$featured_posts = get_sub_field('posts');
 		if( $featured_posts ): ?>
-		<div class="grid-x grid-padding-x">
+		<div class="grid-x grid-padding-x align-justify">
 		    <?php foreach( $featured_posts as $post ): 
 		        setup_postdata($post); ?>
 

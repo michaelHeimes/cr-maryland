@@ -1,0 +1,31 @@
+.faqs {
+	
+	.accordion-item {
+		
+		.accordion-title {
+			
+			h3 {
+				margin: 0;
+				font-size: rem-calc(22);
+				transition: color 0.25s ease;
+				
+				span {
+					display: inline-block;
+					padding: .4em 2em .46em .5em;
+				}
+				
+			}
+			
+		&:not([aria-expanded="true"]):hover {
+			
+			h3{
+				color: $theme-red;
+			}
+			
+		}
+		
+		}
+				
+	}
+	
+}
