@@ -4,10 +4,12 @@
 			
 			<?php if( have_rows('column_1') ):?>
 				<?php while ( have_rows('column_1') ) : the_row();?>	
+				
+				
 			
 				<div class="cell">
 					<div class="number weight-bold">
-						<?php the_sub_field('number');?>
+						<span id="set-1"><?php the_sub_field('number');?></span>
 					</div>
 					
 					<div class="label-text weight-bold">
@@ -23,7 +25,7 @@
 			
 				<div class="cell">
 					<div class="number weight-bold">
-						<?php the_sub_field('number');?>
+						<span id="set-2"><?php the_sub_field('number');?></span>
 					</div>
 					
 					<div class="label-text weight-bold">
@@ -39,7 +41,7 @@
 			
 				<div class="cell">
 					<div class="number weight-bold">
-						<?php the_sub_field('number');?>
+						<span id="set-3"><?php the_sub_field('number');?></span>
 					</div>
 					
 					<div class="label-text weight-bold">
@@ -55,7 +57,7 @@
 			
 				<div class="cell">
 					<div class="number weight-bold">
-						<?php the_sub_field('number');?>
+						<span id="set-4"><?php the_sub_field('number');?></span>
 					</div>
 					
 					<div class="label-text weight-bold">

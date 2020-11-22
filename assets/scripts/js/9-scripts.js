@@ -50,13 +50,15 @@
 	if($('.blog-slider').length) {
 		
 		$('.blog-slider').slick({
-			infinite: false,
+			infinite: true,
 			speed: 500,
 			slidesToShow: 2,
 			slidesToScroll: 1,
 			adaptiveHeight: true,
             dots: false,
-            arrows: false,
+            arrows: true,
+            prevArrow: $('.slider-nav-wrap .prev'),
+			nextArrow: $('.slider-nav-wrap .next'),
             responsive: [
                 {
                   breakpoint: 640,
@@ -175,6 +177,89 @@
 				
 				$('.single-cube .inner').css('min-height', $cubeWidth);
 			
+			}
+		
+		});
+		
+	}
+	
+	// Home Community Numbers Count Up
+	if ($('.four-col-numbers-labels').length) {
+		
+		$('.four-col-numbers-labels').each(function(i) {
+		
+			var $num1 = site_js.list_parent.set_1.number;
+			var $num2 = site_js.list_parent.set_2.number;
+			var $num3 = site_js.list_parent.set_3.number;
+			var $num4 = site_js.list_parent.set_4.number;
+					
+			var counter = { var: 0 };
+			
+			var $value1 = document.getElementById("set-1");
+			var $value2 = document.getElementById("set-2");
+			var $value3 = document.getElementById("set-3");
+			var $value4 = document.getElementById("set-4");
+			
+			gsap.to(counter, 2, {
+				var: $num1,
+				onUpdate: function() {
+				$value1.innerHTML = numberWithCommas(Math.ceil(counter.var));
+				},
+				ease: Circ.easeOut,
+				scrollTrigger: {
+				    trigger: '.four-col-numbers-labels',
+				    start: 'top 75%',
+				    toggleActions: 'play none play reverse'
+				}
+			});
+	
+			var tal2 = document.getElementById("set-2");
+			
+			gsap.to(counter, 2, {
+				var: $num2,
+				onUpdate: function() {
+				$value2.innerHTML = numberWithCommas(Math.ceil(counter.var));
+				},
+				ease: Circ.easeOut,
+				scrollTrigger: {
+				    trigger: '.four-col-numbers-labels',
+				    start: 'top 75%',
+				    toggleActions: 'play none play reverse'
+				}
+			});
+			
+			var tal3 = document.getElementById("set-3");
+			
+			gsap.to(counter, 2, {
+				var: $num3,
+				onUpdate: function() {
+				$value3.innerHTML = numberWithCommas(Math.ceil(counter.var));
+				},
+				ease: Circ.easeOut,
+				scrollTrigger: {
+				    trigger: '.four-col-numbers-labels',
+				    start: 'top 75%',
+				    toggleActions: 'play none play reverse'
+				}
+			});
+	
+			var tal3 = document.getElementById("set-4");
+			
+			gsap.to(counter, 2, {
+				var: $num4,
+				onUpdate: function() {
+				$value4.innerHTML = numberWithCommas(Math.ceil(counter.var));
+				},
+				ease: Circ.easeOut,
+				scrollTrigger: {
+				    trigger: '.four-col-numbers-labels',
+				    start: 'top 75%',
+				    toggleActions: 'play none play reverse'
+				}
+			});
+			
+			function numberWithCommas(x) {
+				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			}
 		
 		});

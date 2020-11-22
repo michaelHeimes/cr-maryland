@@ -441,6 +441,11 @@ a.button.bg-community {
 &:after {
 	margin-left: 1.5em;
 	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-black.svg);
+	transition: transform .4s ease-out;
+}
+
+&:hover:after {
+	transform: translateX(12px);
 }
 
 }
@@ -450,7 +455,12 @@ li.sell > a,
 li.community > a {
 	
 &:after {
-	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-black-thick.svg);
+	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-black.svg);
+	transition: transform .4s ease-out;
+}
+
+&:hover:after {
+	transform: translateX(12px);
 }
 	
 }
@@ -465,6 +475,11 @@ a.button.bg-buy, {
 &:after {
 	margin-left: 1.5em;
 	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-white.svg);
+	transition: transform .4s ease-out;
+}
+
+&:hover:after {
+	transform: translateX(12px);
 }
 
 }
@@ -473,7 +488,12 @@ li.rent > a,
 li.buy > a {
 	
 &:after {
-	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-white-thick.svg);
+	content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-white.svg);
+	transition: transform .4s ease-out;
+}
+
+&:hover:after {
+	transform: translateX(12px);
 }
 	
 }

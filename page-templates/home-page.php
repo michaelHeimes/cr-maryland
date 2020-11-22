@@ -394,7 +394,7 @@ get_header(); ?>
 								
 									<div class="cell">
 										<div class="number weight-bold">
-											<?php the_sub_field('number');?>
+											<span id="set-1"><?php the_sub_field('number');?></span>
 										</div>
 										
 										<div class="label-text weight-bold">
@@ -410,7 +410,7 @@ get_header(); ?>
 								
 									<div class="cell">
 										<div class="number weight-bold">
-											<?php the_sub_field('number');?>
+											<span id="set-2"><?php the_sub_field('number');?></span>
 										</div>
 										
 										<div class="label-text weight-bold">
@@ -426,7 +426,7 @@ get_header(); ?>
 								
 									<div class="cell">
 										<div class="number weight-bold">
-											<?php the_sub_field('number');?>
+											<span  id="set-3"><?php the_sub_field('number');?></span>
 										</div>
 										
 										<div class="label-text weight-bold">
@@ -442,7 +442,7 @@ get_header(); ?>
 								
 									<div class="cell">
 										<div class="number weight-bold">
-											<?php the_sub_field('number');?>
+											<span id="set-4"><?php the_sub_field('number');?></span>
 										</div>
 										
 										<div class="label-text weight-bold">
@@ -524,11 +524,16 @@ get_header(); ?>
 			
 			<section class="blog">
 				<div class="grid-container">
-					<div class="grid-x grid-padding-x">
+					<div class="title-nav-wrap grid-x grid-padding-x align-middle align-justify">
 							
-						<div class="blog-cat-title cell small-12">
+						<div class="blog-cat-title cell shrink">
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-round-black.svg" alt="logo-round-black" />
-							<h2 class="weight-black">Blog</h2>
+							<h2 class="weight-black cell shrink">Blog</h2>
+						</div>
+						
+						<div class="slider-nav-wrap cell shrink">
+							<button class="bg-sell prev"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/r-arrow-black-thick.svg"</button>
+							<button class="bg-sell next"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/r-arrow-black-thick.svg"</button>
 						</div>
 						
 					</div>

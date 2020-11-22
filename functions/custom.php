@@ -27,7 +27,6 @@ if( function_exists('acf_set_options_page_title') ) {
     acf_set_options_page_title( __('Theme Options') );
 }
 
-
 // Add Page Theme to Body classes
 function add_acf_body_class($class) {
 	

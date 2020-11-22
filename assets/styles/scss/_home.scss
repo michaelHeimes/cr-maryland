@@ -224,6 +224,13 @@
 			color: $white;
 			padding: .78em 2.5em;
 			margin-bottom: 4.45em;
+			transition: all 0.25s ease;
+			
+		&:hover {
+			color: $black;
+			background-color: $theme-yellow;
+		}
+			
 		}
 		
 		.four-square {
@@ -252,7 +259,19 @@
 				
 				.mask {
 					opacity: .8;
+					transition: all 0.35s ease;
 				}
+				
+			&:hover {
+				.mask {
+					opacity: 1;
+				}
+				
+				img {
+					transform: translateX(12px);
+				}
+				
+			}
 				
 				.theme-label,
 				h3 {
@@ -272,6 +291,7 @@
 					position: absolute;
 					bottom: 18px;
 					right: 13px;
+					transition: transform .4s ease-out;
 				}
 				
 			&.bg-invest {
@@ -347,6 +367,18 @@
 		padding-top: 6.6em;
 		padding-bottom: 3em;
 		
+		.title-nav-wrap  {
+			.slider-nav-wrap {
+				button {
+					cursor: pointer;
+					&:nth-child(1) {
+						transform: rotate(180deg);
+						margin-right: 1em;
+					}
+				}
+			}
+		}
+		
 		.slick-list {
 			@include breakpoint(medium) {
 				overflow: visible;
@@ -364,6 +396,17 @@
 				}
 				
 			}
+			
+		&:before {
+		    content: "";
+		    position: absolute;
+		    z-index: 1;
+		    left: -100vw;
+		    top: 0;
+		    bottom: 0;
+		    width: 100vw;
+			background: $white;
+		}
 		
 		}
 		
@@ -398,7 +441,7 @@
 					@include breakpoint(tablet) {
 						min-height: 61px;
 						font-size: rem-calc(22);
-						padding: 0.9em 0.5em 0.9em 0.9em;
+						padding: 0.9em;
 					}
 					
 				}
