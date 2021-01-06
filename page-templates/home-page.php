@@ -62,7 +62,7 @@ get_header(); ?>
 								</h1>
 								
 								<?php if( have_rows('banner_right_links') ):?>
-									<?php while ( have_rows('banner_left_links') ) : the_row();?>	
+									<?php while ( have_rows('banner_right_links') ) : the_row();?>	
 									
 									<?php 
 									$link = get_sub_field('single_link');
@@ -532,8 +532,8 @@ get_header(); ?>
 						</div>
 						
 						<div class="slider-nav-wrap cell shrink">
-							<button class="bg-sell prev"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/r-arrow-black-thick.svg"</button>
-							<button class="bg-sell next"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/r-arrow-black-thick.svg"</button>
+							<button class="bg-sell prev"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/r-arrow-black.svg"</button>
+							<button class="bg-sell next"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/r-arrow-black.svg"</button>
 						</div>
 						
 					</div>

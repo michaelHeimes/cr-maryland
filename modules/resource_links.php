@@ -36,7 +36,7 @@
 										<?php endif; ?>
 									</div>
 									
-									<div class="label-wrap weight-black">			
+									<div class="label-wrap">			
 										<?php echo esc_html( $link_title ); ?>
 									</div>
 								

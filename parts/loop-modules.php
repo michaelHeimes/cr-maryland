@@ -50,6 +50,12 @@
 	
 	endif;?>
 
+	<?php if ( get_row_layout() == 'image_and_copy' ) : 
+	
+		get_template_part('modules/image_and_copy');
+	
+	endif;?>
+
 	<?php if ( get_row_layout() == 'image_gallery_slider' ) : 
 	
 		get_template_part('modules/image_gallery_slider');
@@ -95,6 +101,12 @@
 	<?php if ( get_row_layout() == 'video_element' ) : 
 	
 		get_template_part('modules/video_element');
+	
+	endif;?>
+
+	<?php if ( get_row_layout() == 'widget_code_snippet' ) : 
+	
+		get_template_part('modules/widget_code_snippet');
 	
 	endif;?>
 	

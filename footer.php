@@ -113,7 +113,7 @@
 									</div>
 
 									<div class="copyright right cell small-12 medium-shrink">
-										<span><?php the_field('footer_copyright', 'option');?></span> | <a href="https://proprdesign.com/" target="_blank">Designed by Propr</a>
+										<span>© Copyright <?php $year = date("Y"); echo $year?> <?php the_field('footer_copyright', 'option');?></span> | <a href="https://proprdesign.com/" target="_blank">Made by Propr</a>
 									</div>
 									
 								</div>

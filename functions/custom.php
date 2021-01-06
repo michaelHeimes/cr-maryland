@@ -94,14 +94,15 @@ add_filter( 'tiny_mce_before_init', 'my_custom_styles' );
 
 
 
-
-function wps_highlight_results($text){
-     if(is_search()){
-     $sr = get_query_var('s');
-     $keys = explode(" ",$sr);
-     $text = preg_replace('/('.implode('|', $keys) .')/iu', '<strong class="search-excerpt">'.$sr.'</strong>', $text);
-     }
-     return $text;
+if ( is_search() ) {
+	function wps_highlight_results($text){
+	     if(is_search()){
+	     $sr = get_query_var('s');
+	     $keys = explode(" ",$sr);
+	     $text = preg_replace('/('.implode('|', $keys) .')/iu', '<strong class="search-excerpt">'.$sr.'</strong>', $text);
+	     }
+	     return $text;
+	}
+	add_filter('the_excerpt', 'wps_highlight_results');
+	add_filter('the_title', 'wps_highlight_results');
 }
-add_filter('the_excerpt', 'wps_highlight_results');
-add_filter('the_title', 'wps_highlight_results');

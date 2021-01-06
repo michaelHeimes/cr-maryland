@@ -4,6 +4,29 @@ Stylesheet: Global Stylesheet
 
 *************************************************/
 /*********************
+404
+*********************/
+.error404,
+.page-template-thank-you-page {
+	.content {
+	    padding-top: 4.8em;
+	    
+	    p,
+	    a {
+			font-size: rem-calc(18);
+			font-weight: 500;	
+			
+			@include breakpoint(medium) {
+				font-size: rem-calc(21);
+			}
+				    
+	    }
+	    
+	}
+}
+
+
+/*********************
 TYPOGRAPHY
 *********************/
 
@@ -252,7 +275,8 @@ section.module {
 		
 	}
 	
-	p {
+	p,
+	a {
 		font-size: rem-calc(22);
 		line-height: 1.836;
 	}
@@ -284,6 +308,11 @@ section.module {
 		}
 	}
 
+	}
+	
+	.rent .accordion-item .accordion-title:before,
+	.buy .accordion-item .accordion-title:before {
+		content: url(/wp-content/themes/cr-maryland/assets/images/r-arrow-white.svg);
 	}
 
 // Slider Buttons
@@ -398,6 +427,8 @@ li.buy > a {
 	
 }
 
+.contact-form .right form .form-btn-wrap,
+.submit-wrap .nf-field-element,
 body.invest .r-arrow,
 body.sell .r-arrow,
 body.community .r-arrow,
@@ -411,6 +442,8 @@ a.button.bg-community {
 	display: inline-flex;
 }
 
+.contact-form .right form .form-btn-wrap,
+.submit-wrap .nf-field-element,
 .resource-links .single-row a,
 body.invest .r-arrow,
 li.invest > a,
@@ -431,9 +464,12 @@ a.button.bg-community {
     justify-content: space-between;
 }
 
+.contact-form .right form .form-btn-wrap,
+.submit-wrap .nf-field-element,
 body.invest .r-arrow,
 body.sell .r-arrow,
 body.community .r-arrow,
+body.buy .r-arrow:not(.button),
 a.button.bg-invest,
 a.button.bg-sell,
 a.button.bg-community {

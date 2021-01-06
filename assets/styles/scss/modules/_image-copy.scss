@@ -1,0 +1,12 @@
+.image-copy {
+	
+	.img-wrap {
+		margin-bottom: 2em;
+		
+		@include breakpoint(tablet) {
+			margin-bottom: 0;
+		}
+		
+	}
+	
+}

@@ -57,7 +57,7 @@ get_header(); ?>
 				</div>
 			
 			
-			<?php get_template_part('modules/contact_form');?>	
+				<?php get_template_part( 'parts/loop', 'modules' ); ?>
 			
 			    					
 			</main> <!-- end #main -->

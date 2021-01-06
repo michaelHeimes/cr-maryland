@@ -21,8 +21,7 @@ get_header(); ?>
 							
 							<div class="press-label caps weight-bold">Press</div>
 							<h1 class="weight-black"><?php the_field('press_page_heading');?></h1>
-							<p class="weight-bold"><?php the_field('page_sub-heading');?></p>
-							
+							<div class="copy-wrap"><?php the_field('page_sub-heading');?></div>
 						</div>
 						
 					</div>

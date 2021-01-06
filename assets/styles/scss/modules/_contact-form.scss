@@ -5,5 +5,128 @@
 	.left {
 		margin-bottom: 2em;
 	}
+	
+	.right {
+		form {
+			text-align: right;
+			font-weight: 600;
+			font-size: rem-calc(15px);
+			
+			.nf-before-form-content,
+			span.ninja-forms-req-symbol {
+				display: none;
+			}
+			
+			label {
+				font-size: inherit;
+				color: $white;
+				text-align: right;
+			}
+			
+			.nf-field-label {
+				width: 100%;
+				margin: 0;
+			}
+			
+			input,
+			select,
+			textarea {
+				text-align: left;
+				background-color: #6E6E74;	
+				color: #1D1D1D;
+				box-shadow: 0 0 0;
+				border-color: #6E6E74;
+			}
+			
+			input,
+			select {
+				height: 3.875em;
+			}
+			
+			input {
+				margin-bottom: 0;
+			}
+			
+			select {
+				margin-bottom: 1.4em;
+			}
+			
+			textarea {
+				margin-bottom: 0;
+			}
+			
+			.form-btn-wrap,
+			.submit-wrap .nf-field-element {
+				position: relative;
+				background-color: $theme-yellow;
+				padding: .6em 1.7em;
+				margin: 0 0 1rem;
+				width: 202px;
+				height: 51px;
+
+				input {
+					font-weight: bold;
+					text-transform: uppercase;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					padding-right: 8em;
+					height: 100%;
+					width: 100%;
+					cursor: pointer;
+				    border: 0;
+				    background-color: $theme-yellow;
+					vertical-align: middle;
+					border: 1px solid transparent;
+					border-radius: 0;
+					transition: background-color .25s ease-out,color .25s ease-out;
+					font-family: inherit;
+					font-size: .9rem;
+					-webkit-appearance: none;
+					line-height: 1;
+					text-align: center;
+					cursor: pointer;
+				}
+				
+				&:after {
+					position: absolute;
+					top: 55%;
+					right: 2em;
+					transform: translateY(-50%) translateX(0px);
+				}
+				
+				&:hover{
+					color: $black;
+					
+					&:after {
+						transform: translateY(-50%) translateX(12px);	
+					}
+					
+				}
+			
+			}
+			
+			.nf-form-content input[type=button]:hover {
+				color: $black;
+			}
+			
+			.submit-wrap {
+				width: 100%;
+				justify-content: flex-end;
+			
+				.nf-field-element {
+					input {
+						background-color: transparent;
+						height: auto;
+						width: auto;
+					}
+				}
+			
+			}
+			
+		}
+	}
 
 }

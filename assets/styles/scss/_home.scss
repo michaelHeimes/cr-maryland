@@ -24,7 +24,7 @@
 						padding: 0 0.4em;
 						
 						&:first-child {
-							padding-top: 0.39em;
+							padding-top: 0.2em !important;
 							
 							@include breakpoint(tablet) {
 								padding-top: 0;
