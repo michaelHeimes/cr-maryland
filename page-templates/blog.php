@@ -145,7 +145,7 @@ get_header(); ?>
 								
 								<div class="cell shrink">
 									<span class="circle-arrow-link">
-										<a href="<?php the_field('invest_page_link');?>">
+										<a href="<?php the_field('sell_page_link');?>">
 											View More Posts
 										</a>
 									</span>
@@ -196,7 +196,7 @@ get_header(); ?>
 								
 								<div class="cell shrink">
 									<span class="circle-arrow-link">
-										<a href="<?php the_field('invest_page_link');?>">
+										<a href="<?php the_field('rent_page_link');?>">
 											View More Posts
 										</a>
 									</span>
@@ -247,7 +247,7 @@ get_header(); ?>
 								
 								<div class="cell shrink">
 									<span class="circle-arrow-link">
-										<a href="<?php the_field('invest_page_link');?>">
+										<a href="<?php the_field('buy_page_link');?>">
 											View More Posts
 										</a>
 									</span>
@@ -298,7 +298,7 @@ get_header(); ?>
 								
 								<div class="cell shrink">
 									<span class="circle-arrow-link">							
-										<a href="<?php the_field('invest_page_link');?>">
+										<a href="<?php the_field('community_page_link');?>">
 											View More Posts
 										</a>
 									</span>

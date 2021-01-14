@@ -61,10 +61,6 @@
 										</div>
 										
 										<div>
-											<a href="<?php the_field('twitter_url', 'option');?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/footer-twitter-logo.svg" alt="twitter-logo" /></a>
-										</div>
-										
-										<div>
 											<a href="<?php the_field('youtube_url', 'option');?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/footer-youtube-logo.svg" alt="youtube-logo" /></a>
 										</div>
 																				
@@ -113,7 +109,7 @@
 									</div>
 
 									<div class="copyright right cell small-12 medium-shrink">
-										<span>© Copyright <?php $year = date("Y"); echo $year?> <?php the_field('footer_copyright', 'option');?></span> | <a href="https://proprdesign.com/" target="_blank">Made by Propr</a>
+										<span>© Copyright <?php $year = date("Y"); echo $year?> <?php the_field('footer_copyright', 'option');?></span> | <a href="https://proprdesign.com/" target="_blank">Made by Propr Design</a>
 									</div>
 									
 								</div>
